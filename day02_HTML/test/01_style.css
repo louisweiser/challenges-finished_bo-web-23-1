@@ -1,0 +1,29 @@
+h2 {
+  background-color: yellowgreen;
+  color: red;
+}
+section {
+  /*  
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+  *
+  Das sind die 3 Eigenschaften die nötig sind zum erzwugen einer Border
+  Es gibt häufig schorthands die mehrere sinnvolle Eigenscahaften vereinen
+  bei unterschiedlichen
+  */
+  border: 5px black solid;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 5px;
+  width: 50vw;
+}
+.background-highlight {
+  background-color: aquamarine;
+}
+.extra-border {
+  border-width: 10px;
+}
+.borderbox {
+  box-sizing: border-box;
+}
