@@ -17,13 +17,21 @@ form.addEventListener("submit", (event) => {
   // --v-- write your code here --v--
   const formElements = event.target.elements;
 
-  if (formElements.tos.checked === "true") {
-    hideTosError();
-  } else {
+  if (formElements.tos.checked === false) {
+    console.log("error");
     showTosError();
+    return;
   }
+  hideTosError();
   // --^-- write your code here --^--
 
   // eslint-disable-next-line no-alert
   alert("Form submitted");
+});
+
+// Aufgabe: Can you make the error message hidden initially (before the form is submitted)?
+//Ich weiß nicht wie umsetzten ohne HTML zu berühren
+form.addEventListener("click", () => {
+  /* Ansatz */
+  console.log("click");
 });
