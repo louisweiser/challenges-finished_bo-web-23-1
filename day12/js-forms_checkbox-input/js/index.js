@@ -2,6 +2,7 @@ console.clear();
 
 const form = document.querySelector('[data-js="form"]');
 const tosError = document.querySelector('[data-js="tos-error"]');
+const success = document.querySelector('[data-js="success"]');
 
 function hideTosError() {
   tosError.setAttribute("hidden", "");
@@ -22,7 +23,8 @@ form.addEventListener("submit", (event) => {
     showTosError();
     return;
   }
-  hideTosError();
+  success.textContent = "Complaint successfully submitted!";
+  form.remove();
   // --^-- write your code here --^--
 
   // eslint-disable-next-line no-alert
@@ -30,8 +32,12 @@ form.addEventListener("submit", (event) => {
 });
 
 // Aufgabe: Can you make the error message hidden initially (before the form is submitted)?
-//Ich weiß nicht wie umsetzten ohne HTML zu berühren
 form.addEventListener("click", () => {
-  /* Ansatz */
-  console.log("click");
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  if (data.tos === "on") {
+    hideTosError();
+  } else {
+    showTosError();
+  }
 });
