@@ -9,6 +9,7 @@ body {
   display: grid;
   place-items: center;
   background-color: #e4e8f0;
+  transition-duration: 2s;
 }
 
 /* Start Button */
@@ -21,6 +22,9 @@ body {
   border: none;
   font-size: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .start-button:hover {
@@ -28,6 +32,8 @@ body {
   color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transition-timing-function: ease-in;
+  transition-duration: 0.5s;
 }
 
 .start-button:disabled {
@@ -75,4 +81,9 @@ body {
   opacity: 0.8;
   width: 0%;
   transition: width linear 2000ms;
+}
+
+.body {
+  background-color: orangered;
+  transition-duration: 1s;
 }

@@ -9,9 +9,22 @@ let timeoutId;
 startButton.addEventListener("click", () => {
   startButton.disabled = true;
   timeoutId = setTimeout(hideToast, 2000);
+  timeoutId = setTimeout(removeBodyColor, 2000);
   toast.classList.remove("toast--hidden");
   countdown.classList.add("countdown--visible");
 });
+
+startButton.addEventListener("mouseover", () => {
+  document.body.classList.add("body");
+});
+
+startButton.addEventListener("mouseleave", () => {
+  removeBodyColor();
+});
+
+function removeBodyColor() {
+  document.body.classList.remove("body");
+}
 
 toast.addEventListener("click", () => {
   clearTimeout(timeoutId);
