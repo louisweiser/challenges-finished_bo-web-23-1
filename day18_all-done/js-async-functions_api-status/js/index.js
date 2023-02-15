@@ -19,16 +19,23 @@ async function checkIfApiIsAvailable() {
    * is okay and false if it is not.
    **/
   // --v-- write your code here --v--
+  button.disabled = true;
+  button.textContent = "Loading ...";
   icon.textContent = "⏳";
   console.log("before fetch");
-  const response = await fetch(apiStatusUrl);
-  console.log(response);
-  if (response.ok) {
-    icon.textContent = "✅";
-  } else {
-    icon.textContent = "❌";
+  try {
+    const response = await fetch(apiStatusUrl);
+    console.log(response);
+    if (response.ok) {
+      icon.textContent = "✅";
+    } else {
+      icon.textContent = "❌";
+    }
+  } catch (error) {
+    console.log(error);
   }
-
+  button.disabled = false; //bei solchen Geschichten butten wehrend asynchronen vorgängen butten deaktivieren um daten spam zu verhindern und fehler oder abstürtze zu vermeiden
+  button.textContent = "Check API Status";
   // Ältere Schreibweise mit then():
   // const promise = fetch(apiStatusUrl);
   // console.log(promise);
