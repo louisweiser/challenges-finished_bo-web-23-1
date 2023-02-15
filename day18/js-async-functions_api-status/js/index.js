@@ -5,7 +5,7 @@ const apiStatusUrl = "https://example-apis.vercel.app/api/status";
 
 // Something needs to change here…
 // ↙️
-function checkIfApiIsAvailable() {
+async function checkIfApiIsAvailable() {
   /**
    * Hint 1:
    * Use the `fetch()` function and pass the `apiStatusUrl` into it
@@ -19,6 +19,28 @@ function checkIfApiIsAvailable() {
    * is okay and false if it is not.
    **/
   // --v-- write your code here --v--
+  icon.textContent = "⏳";
+  console.log("before fetch");
+  const response = await fetch(apiStatusUrl);
+  console.log(response);
+  if (response.ok) {
+    icon.textContent = "✅";
+  } else {
+    icon.textContent = "❌";
+  }
+
+  // Ältere Schreibweise mit then():
+  // const promise = fetch(apiStatusUrl);
+  // console.log(promise);
+  // promise.then((response) => {
+  //   console.log(response);
+  //   if (response.ok) {
+  //     icon.textContent = "✅";
+  //   } else {
+  //     icon.textContent = "❌";
+  //   }
+  // });
+  console.log("after fetch");
   // --^-- write your code here --^--
 }
 
