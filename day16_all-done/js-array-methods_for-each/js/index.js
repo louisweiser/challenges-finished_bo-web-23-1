@@ -20,14 +20,14 @@ const colors = [
 ];
 
 for (let i = 0; i < 10; i++) {
-  colors.forEach((colors) => {
-    renderColorBox(colors);
+  colors.forEach((element) => {
+    renderColorBox(element);
   });
 }
 
-function renderColorBox(colors) {
+function renderColorBox(element) {
   const div = document.createElement("div");
   div.classList.add("color-box");
-  div.style.backgroundColor = colors;
+  div.style.backgroundColor = element;
   document.body.append(div);
 }

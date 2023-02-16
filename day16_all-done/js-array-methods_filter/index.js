@@ -23,20 +23,20 @@ const cards = [
   },
 ];
 
-const onlyCardWithIdTwo = cards.filter((cards) => {
-  return cards.id === "2";
+const onlyCardWithIdTwo = cards.filter((object) => {
+  return object.id === "2";
 });
 
-const allCardsWith3Tags = cards.filter((cards) => {
-  return cards.tags.length === 3;
+const allCardsWith3Tags = cards.filter((object) => {
+  return object.tags.length === 3;
 });
 
-const allCardsThatAreNotBookmarked = cards.filter((cards) => {
-  return !cards.isBookmarked;
+const allCardsThatAreNotBookmarked = cards.filter((object) => {
+  return !object.isBookmarked;
 });
 
-const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((cards) => {
-  return cards.tags === "html" || cards.isBookmarked;
+const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter((object) => {
+  return object.tags === "html" || object.isBookmarked;
 });
 
 export {
