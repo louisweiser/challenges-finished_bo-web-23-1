@@ -8,6 +8,7 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <App isHappy={true} />
+    <App isHappy={false} />
   </StrictMode>
 );

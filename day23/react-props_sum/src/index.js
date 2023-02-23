@@ -8,6 +8,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <App valueA={15} valueB={5} />
   </StrictMode>
 );

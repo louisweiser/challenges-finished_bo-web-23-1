@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
 
-export default function App() {
-  return <h1>Replace me with your component!</h1>;
+export default function App({ color, text }) {
+  return <button style="backgroundColor='green'">{text}</button>;
 }

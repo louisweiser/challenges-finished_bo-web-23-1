@@ -8,6 +8,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <App color={"green"} text="Hello World" />
   </StrictMode>
 );
