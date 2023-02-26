@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+
 export default function App() {
   const [pufferfish, setPufferfish] = useState("🐡");
   const [whale, setWhale] = useState("🐋");
