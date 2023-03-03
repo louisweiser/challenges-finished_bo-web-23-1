@@ -18,7 +18,7 @@ export default function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/volumes/the-two-towers">the-two-towers</Link>
+          <Link href="/volumes/the-two-towers2">the-two-towers</Link>
         </li>
       </ul>
     </div>
