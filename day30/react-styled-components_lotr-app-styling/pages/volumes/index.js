@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { introduction, volumes } from "../../lib/data";
-import Button from "../../components/Button";
 
 export default function Volumes() {
   return (
@@ -8,14 +7,12 @@ export default function Volumes() {
       <h1>The Lord of the Rings</h1>
       <p>{introduction}</p>
       <ul>
-        {volumes.map(({ slug, title }) => (
-          <li key={slug}>
-            <Link href={`/volumes/${slug}`}>{title}</Link>
+        {volumes.map((volume) => (
+          <li key={volume.id}>
+            <Link href={`/volumes/${volume.slug}`}>{volume.title}</Link>
           </li>
         ))}
       </ul>
-      <Button></Button>
     </>
   );
 }
-//bei map muss der key mit rein !!
