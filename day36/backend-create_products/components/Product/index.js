@@ -2,6 +2,7 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import { StyledButton } from "../Button/Button.styled";
 import { ProductCard } from "./Product.styled";
+import Comments from "../Comments";
 
 export default function Product() {
   const router = useRouter();
@@ -12,27 +13,15 @@ export default function Product() {
   if (!data) {
     return <h1>Loading...</h1>;
   }
-  console.log(data);
-  console.log(id);
-
-  function getObjectById(array, ids) {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i]._id === ids) {
-        return array[i];
-      }
-    }
-    return null;
-  }
-  const object = getObjectById(data, id);
-  console.log(object);
 
   return (
     <ProductCard>
-      <h2>{object.name}</h2>
-      <p>Description: {object.description}</p>
+      <h2>{data.name}</h2>
+      <p>Description: {data.description}</p>
       <p>
-        Price: {object.price} {object.currency}
+        Price: {data.price} {data.currency}
       </p>
+      {data.reviews.length > 0 && <Comments reviews={data.reviews} />}
       <StyledButton type="button" onClick={() => router.push("/")}>
         Back to all
       </StyledButton>
